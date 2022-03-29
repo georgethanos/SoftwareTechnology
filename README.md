@@ -1,2 +1,2 @@
 # SoftwareTechnology
-Project of Software Technology
+Project of Software Technology.
