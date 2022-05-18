@@ -1,38 +1,5 @@
 ''' Script with classes '''
 
-
-
-# Class for announcements
-class Announcement:
-
-  # Constructor
-  def __init__(self, timestamp, author, text, website, kind):
-    self.timestamp = timestamp
-    self.author = author
-    self.text = text
-    self.website = website
-    self.kind = kind
-
-
-# Class for Rooms
-class Room:
-
-  # Constructor
-  def __init__(self, name, capacity, kind, schedule):
-    self.name = name
-    self.capacity = capacity
-    self.kind = kind
-    self.schedule = schedule
-
-
-# Class for Crawlers
-class Crawler:
-
-  # Constructor
-  def __init__(self, websites, kind):
-    self.websites = websites
-    self.kind = kind
-
     
     ''' USE CASE 5 & 10 '''
 
@@ -237,6 +204,9 @@ class Note:
 
   def DeleteNote(self):
     pass
+  
+  def CheckDownloadedNotes(self):
+    pass
 
 
 # Class for comments
@@ -256,6 +226,15 @@ class Comment:
 
   def RetrieveComment(self):
     pass
+  
+   def CreateDownloadedNotes(self):
+    pass
+
+  def CheckForm(self):
+    pass
+
+  def StoreComments(self):
+    pass
 
 
 # Class for students
@@ -272,4 +251,51 @@ class Student:
   def FindStudent(self):
     pass
   
+
+''' USE CASE 9 & 11 '''
+
+# Class for announcements
+class Announcement:
+
+  # Constructor
+  def __init__(self, timestamp, author, text, website, kind):
+    self.timestamp = timestamp
+    self.author = author
+    self.text = text
+    self.website = website
+    self.kind = kind
+
+  def StoreAnnouncements(self):
+    pass
+
+  def ReclassifyAnnouncements(self):
+    pass
+
+  def CheckSourceAnnouncements(self):
+    pass
+
+  def RetrieveAnnouncement(self):
+    pass
+
+# Class for Rooms
+class Room:
+
+  # Constructor
+  def __init__(self, name, capacity, kind, schedule):
+    self.name = name
+    self.capacity = capacity
+    self.kind = kind
+    self.schedule = schedule
+
+
+# Class for Crawlers
+class Crawler:
+
+  # Constructor
+  def __init__(self, websites, kind):
+    self.websites = websites
+    self.kind = kind
+
+  def ActivateCrawler(self):
+    pass
   
