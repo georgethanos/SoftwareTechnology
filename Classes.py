@@ -13,19 +13,6 @@ class Student:
     self.email = email
 
 
-# Class for courses
-class Course:
-
-  # Constructor
-  def __init__(self, name, semester, academy, professor, ECTS, points):
-    self.name = name
-    self.semester = semester
-    self.academy = academy
-    self.professor = professor
-    self.ECTS = ECTS
-    self.points = points
-
-
 # Class for notes
 class Note:
 
@@ -45,16 +32,6 @@ class Comment:
   def __init__(self, subject, text, timestamp):
     self.subject = subject
     self.text = text
-    self.timestamp = timestamp
-
-
-# Class for evaluations
-class Evaluation:
-
-  # Constructor
-  def __init__(self, evaluator, rate, timestamp):
-    self.evaluator = evaluator
-    self.rate = rate
     self.timestamp = timestamp
 
 
@@ -100,15 +77,6 @@ class Academy:
     self.num_of_professors = num_of_professors
 
 
-# Class for QR-Stickers
-class QRSticker:
-
-  # Constructor
-  def __init__(self, code, room):
-    self.code = code
-    self.room = room
-
-
 # Class for Rooms
 class Room:
 
@@ -140,3 +108,92 @@ class Crawler:
     self.websites = websites
     self.kind = kind
 
+    
+    ''' USE CASE 5 & 10 '''
+
+# Class for courses
+class Course:
+
+  # Constructor
+  def __init__(self, name, semester, academy, professor, ECTS, points):
+    self.name = name
+    self.semester = semester
+    self.academy = academy
+    self.professor = professor
+    self.ECTS = ECTS
+    self.points = points
+
+  def RetrieveCourseInfo(self):
+    pass
+
+
+# Class for evaluations
+class Evaluation:
+
+  # Constructor
+  def __init__(self, evaluator, rate, timestamp):
+    self.evaluator = evaluator
+    self.rate = rate
+    self.timestamp = timestamp
+
+  def MakeEvaluation(self):
+    pass
+
+  def CheckGrade(self):
+    pass
+
+  def StoreEvaluation(self):
+    pass
+
+  def RetrieveEvaluations(self):
+    pass
+
+
+# Class for QR-Stickers
+class QRSticker:
+
+  # Constructor
+  def __init__(self, code, room):
+    self.code = code
+    self.room = room
+
+  def ReadQR(self):
+    pass
+
+# Class for Admins
+class Admin:
+
+  # Constructor
+  def __init__(self, name, log):
+    self.name = name
+    self.log = log
+
+  def SendErrorLog(self):
+    pass
+
+
+# Class for Cameras
+class Camera:
+
+  # Constructor
+  def __init__(self, trigger):
+    self.trigger = trigger
+
+  def EnableCamera(self):
+    pass
+
+  def CheckCamera(self):
+    pass
+
+
+# Class for ErrorFiles
+class ErrorFile:
+
+  # Constructor
+  def __init__(self, id, code, text):
+    self.id = id
+    self.code = code
+    self.text = text
+
+  def CreateErrorLog(self):
+    pass
