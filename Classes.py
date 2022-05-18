@@ -1,39 +1,6 @@
 ''' Script with classes '''
 
 
-# Class for students
-class Student:
-
-  # Constructor
-  def __init__(self, name, surname, AM, import_year, email):
-    self.name = name
-    self.surname = surname
-    self.AM = AM
-    self.import_year = import_year
-    self.email = email
-
-
-# Class for notes
-class Note:
-
-  # Constructor
-  def __init__(self, file, course, timestamp, description, author):
-    self.file = file
-    self.course = course
-    self.timestamp = timestamp
-    self.description = description
-    self.author = author
-
-
-# Class for comments
-class Comment:
-
-  # Constructor
-  def __init__(self, subject, text, timestamp):
-    self.subject = subject
-    self.text = text
-    self.timestamp = timestamp
-
 
 # Class for announcements
 class Announcement:
@@ -228,4 +195,81 @@ class Academy:
   def DownloadPdf(self):
     pass
 
+''' USE CASE 6, 7 & 8 '''
 
+# Class for notes
+class Note:
+
+  # Constructor
+  def __init__(self, file, course, timestamp, description, author):
+    self.file = file
+    self.course = course
+    self.timestamp = timestamp
+    self.description = description
+    self.author = author
+
+  def SearchNote(self):
+    pass
+
+  def RetrieveNoteNames(self):
+    pass
+
+  def DownloadNote(self):
+    pass
+
+  def MakeNote(self):
+    pass
+
+  def CheckFileSize(self):
+    pass
+
+  def StoreNote(self):
+    pass
+
+  def RetrieveNote(self):
+    pass
+
+  def UpdateNote(self):
+    pass
+
+  def SaveNote(self):
+    pass
+
+  def DeleteNote(self):
+    pass
+
+
+# Class for comments
+class Comment:
+
+  # Constructor
+  def __init__(self, subject, text, timestamp, score, note_name, comment_writer):
+    self.subject = subject
+    self.text = text
+    self.timestamp = timestamp
+    self.score = score
+    self.note_name = note_name
+    self.comment_writer = comment_writer
+
+  def SearchComment(self):
+    pass
+
+  def RetrieveComment(self):
+    pass
+
+
+# Class for students
+class Student:
+
+  # Constructor
+  def __init__(self, name, surname, AM, import_year, email):
+    self.name = name
+    self.surname = surname
+    self.AM = AM
+    self.import_year = import_year
+    self.email = email
+
+  def FindStudent(self):
+    pass
+  
+  
