@@ -47,36 +47,6 @@ class Announcement:
     self.kind = kind
 
 
-# Class for maps
-class Map:
-
-  # Constructor
-  def __init__(self, name, kind):
-    self.name = name
-    self.kind = kind
-
-
-# Class for inner maps
-class InnerMap:
-
-  # Constructor
-  def __init__(self, name, building, rooms):
-    self.name = name
-    self.building = building
-    self.rooms = rooms
-
-
-# Class for academies
-class Academy:
-
-  # Constructor
-  def __init__(self, name, address, num_of_students, num_of_professors):
-    self.name = name
-    self.address = address
-    self.num_of_students = num_of_students
-    self.num_of_professors = num_of_professors
-
-
 # Class for Rooms
 class Room:
 
@@ -86,18 +56,6 @@ class Room:
     self.capacity = capacity
     self.kind = kind
     self.schedule = schedule
-
-
-# Class for Markers
-class Marker:
-
-  # Constructor
-  def __init__(self, name, coordinates, kind, color, data):
-    self.name = name
-    self.coordinates = coordinates
-    self.kind = kind
-    self.color = color
-    self.data = data
 
 
 # Class for Crawlers
@@ -197,3 +155,77 @@ class ErrorFile:
 
   def CreateErrorLog(self):
     pass
+  
+  
+  ''' USE CASE 1 & 4 '''
+
+# Class for maps
+class Map:
+
+  # Constructor
+  def __init__(self, name, kind):
+    self.name = name
+    self.kind = kind
+
+  def RetrieveCategAndMap(self):
+    pass
+
+  def EndGps(self):
+    pass
+
+
+# Class for Markers
+class Marker:
+
+  # Constructor
+  def __init__(self, name, coordinates, kind, color, data, timetable):
+    self.name = name
+    self.coordinates = coordinates
+    self.kind = kind
+    self.color = color
+    self.data = data
+    self.timetable = timetable
+
+  def RetrieveCoord(self):
+    pass
+
+  def CheckOpenMarks(self):
+    pass
+
+  def RemoveClosedMarks(self):
+    pass
+
+  def RetrieveMarkerInfo(self):
+    pass
+
+  def CheckLoc(self):
+    pass
+
+  def LocAnalysis(self):
+    pass
+
+  def RetrieveMarker(self):
+    pass
+
+
+# Class for academies
+class Academy:
+
+  # Constructor
+  def __init__(self, name, address, num_of_students, num_of_professors, inner_map):
+    self.name = name
+    self.address = address
+    self.num_of_students = num_of_students
+    self.num_of_professors = num_of_professors
+    self.inner_map = inner_map
+
+  def CheckIfAcademyBuild(self):
+    pass
+
+  def RetrievePdfInnerMap(self):
+    pass
+
+  def DownloadPdf(self):
+    pass
+
+
