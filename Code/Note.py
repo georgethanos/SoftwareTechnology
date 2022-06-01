@@ -19,6 +19,7 @@ class Note:
         self.course = course
         self.timestamp = timestamp
         self.description = description
+        self.version = version
         self.author = author
 
     def SearchNote(self):
@@ -121,7 +122,8 @@ class Note:
                 "course": self.course,
                 "description": self.description,
                 "author": self.author,
-                "timestamp": self.timestamp
+                "timestamp": self.timestamp,
+                "version": "1.0"
             }
 
             col.insert_one(note)
@@ -150,6 +152,7 @@ class Note:
                     "description": n['description'],
                     "author": n['author'],
                     "timestamp": n['timestamp']
+                    "version": n['version']
                 }
                 notes_list.append(note)
 
@@ -180,6 +183,7 @@ class Note:
                     oldFilename = n['filename']
                     oldDescr = n['description']
                     oldTimestamp = n['timestamp']
+                    oldVersion = n['version']
                     
             # Find new timestamp
             timestampNow = datetime.now().strftime('%d-%m-%Y')
@@ -195,11 +199,18 @@ class Note:
             # DataBase update for note timestamp
             queryTimestamp = { 'timestamp': oldTimestamp }
             newValues_Timestamp = { "$set": { "timestamp": timestampNow } }
+            
+            newVersion = oldVersion + 1
+            
+            # DataBase update for note version
+            queryVersion = { 'version': oldVersion }
+            newValues_Version = { "$set": { "version": newVersion } }
 
             # Make the updates
             col.update_one(queryNotename, newValues_Notename)
             col.update_one(queryDescr, newValues_Descr)
             col.update_one(queryTimestamp, newValues_Timestamp)
+            col.update_one(queryVersion, newValues_Version)
 
             ''' Delete old file in Google Drive '''
 
@@ -282,7 +293,7 @@ class Note:
 def get_database():
 
     # Provide the mongodb atlas url to connect python to mongodb using pymongo
-    CONNECTION_STRING = "mongodb+srv://tslk:Tslkgtx950pt@cluster0.jnvsh.mongodb.net/StudentUp"
+    CONNECTION_STRING = "mongodb+srv://****:************@cluster0.jnvsh.mongodb.net/StudentUp"
 
     # Create a connection using MongoClient
     from pymongo import MongoClient
