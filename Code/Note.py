@@ -285,10 +285,6 @@ class Note:
         print("Note deleted successfully")
         return True
 
-    # SAKIS
-    def CheckDownloadedNotes(self):
-        pass
-
 # Connection with database
 def get_database():
 
