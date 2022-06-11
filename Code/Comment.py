@@ -25,7 +25,7 @@ class Comment:
     col = dbname["Comments"]
 
     for n in col.find():
-      # Check only comments from the selected course nd note
+      # Check only comments from the selected course and note
       if n['course'] == self.subject and n['note_name'] == self.note_name:
 
         comment = {
@@ -35,10 +35,10 @@ class Comment:
         }
         comment_list.append(comment)
 
-    if len(notes_list) == 0:
+    if len(comment_list) == 0:
       return False
     else:
-      return notes_list
+      return comment_list
 
   # SAKIS
 
