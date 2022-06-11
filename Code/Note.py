@@ -34,9 +34,21 @@ class Note:
         for n in col.find():
             # Check only notes from the selected course
             if n['course'] == self.course:
-                notes_list.append(n['notename'])
-
-        return notes_list
+                note = {
+                    "natename": n['notename'],
+                    "filename": n['filename'],
+                    "course": n['course'],
+                    "description": n['description'],
+                    "author": n['author'],
+                    "timestamp": n['timestamp']
+                    "version": n['version']
+                }
+                notes_list.append(note)
+                
+        if len(notes_list) == 0:
+            return False
+        else:
+            return notes_list
 
     def DownloadNote(self, course, filename):
         # Find Drive folder id for the specific course
